@@ -12,6 +12,11 @@ rm -f output/1st/s_z.fst output/1st/s_z.pdf
 rm -f output/1st/x_z.fst output/1st/x_z.pdf
 rm -f output/1st/x_s.fst output/1st/x_s.pdf
 
+	#temporary
+rm -f output/1st/step_t1.fst output/1st/step_t1.pdf
+rm -f output/1st/step_t2.fst output/1st/step_t2.pdf
+
+
 rm -f output/1st/step1.fst output/1st/step1.pdf
 	
 	#testes
