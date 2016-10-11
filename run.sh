@@ -79,14 +79,4 @@ fstcompose output/1st/extra.fst output/1st/step1.fst > output/1st/test4.fst
 fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test4.fst | dot -Tpdf > output/1st/test4.pdf
 
 
-#fstcompose output/1st/asa.fst output/1st/step1.fst > output/1st/test2.fst
-#fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test2.fst | dot -Tpdf > output/1st/test2.pdf
-
-#fstcompose output/1st/exame.fst output/1st/step1.fst > output/1st/test3.fst
-#fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test3.fst | dot -Tpdf > output/1st/test3.pdf
-
-#fstcompose extra.fst output/1st/step1.fst > output/1st/test4.fst
-#fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test4.fst | dot -Tpdf > output/1st/test4.pdf
-
-
 #2nd
