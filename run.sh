@@ -7,9 +7,15 @@ mkdir -p output
 
 mkdir -p output/1st
 
-rm -f outputs/1st/s_z.fst output/1st/s_z.pdf
-rm -f outputs/1st/x_z.fst output/1st/x_z.pdf
-rm -f outputs/1st/x_s.fst output/1st/x_s.pdf
+ 	#transdutores
+rm -f output/1st/s_z.fst output/1st/s_z.pdf
+rm -f output/1st/x_z.fst output/1st/x_z.pdf
+rm -f output/1st/x_s.fst output/1st/x_s.pdf
+	
+	#testes
+rm -f output/1st/asa.fst output/1st/asa.pdf
+rm -f output/1st/casa.fst output/1st/casa.pdf
+
 
 #s->z between vowels
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/s_z.txt | fstarcsort > output/1st/s_z.fst
