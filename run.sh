@@ -96,6 +96,7 @@ rm -f output/3rd/r_4.fst output/3rd/r_4.pdf
 rm -f output/3rd/h_eps.fst output/3rd/h_eps.pdf
 rm -f output/3rd/q_k.fst output/3rd/q_k.pdf
 rm -f output/3rd/z_s.fst output/3rd/z_s.pdf
+rm -f output/3rd/x_ks.fst output/3rd/x_ks.pdf
 
 
 
@@ -163,3 +164,7 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/q_k.fst | dot
 #z->s In the end of word
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/z_s.txt | fstarcsort > output/3rd/z_s.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/z_s.fst | dot -Tpdf  > output/3rd/z_s.pdf 
+
+#x->ks In the end of word
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/x_ks.txt | fstarcsort > output/3rd/x_ks.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/x_ks.fst | dot -Tpdf  > output/3rd/x_ks.pdf 
