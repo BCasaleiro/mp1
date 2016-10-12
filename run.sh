@@ -95,6 +95,7 @@ mkdir -p output/3rd
 rm -f output/3rd/r_4.fst output/3rd/r_4.pdf
 rm -f output/3rd/h_eps.fst output/3rd/h_eps.pdf
 rm -f output/3rd/q_k.fst output/3rd/q_k.pdf
+rm -f output/3rd/z_s.fst output/3rd/z_s.pdf
 
 
 
@@ -158,3 +159,7 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/h_eps.fst | d
 #q->k
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/q_k.txt | fstarcsort > output/3rd/q_k.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/q_k.fst | dot -Tpdf  > output/3rd/q_k.pdf 
+
+#z->s In the end of word
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/z_s.txt | fstarcsort > output/3rd/z_s.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/z_s.fst | dot -Tpdf  > output/3rd/z_s.pdf 
