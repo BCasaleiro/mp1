@@ -9,12 +9,11 @@ mkdir -p output/1st
 
  	#transdutores
 rm -f output/1st/s_z.fst output/1st/s_z.pdf
-rm -f output/1st/x_z.fst output/1st/x_z.pdf
-rm -f output/1st/x_s.fst output/1st/x_s.pdf
+rm -f output/1st/x.fst output/1st/x.pdf
+
 
 	#temporary
 rm -f output/1st/step_t1.fst output/1st/step_t1.pdf
-rm -f output/1st/step_t2.fst output/1st/step_t2.pdf
 
 
 rm -f output/1st/step1.fst output/1st/step1.pdf
@@ -51,18 +50,15 @@ fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/s_z.txt | fstarc
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/s_z.fst | dot -Tpdf  > output/1st/s_z.pdf 
 
 #x->z when word starts with E and followed by vowel
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/x_z.txt | fstarcsort > output/1st/x_z.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/x_z.fst | dot -Tpdf  > output/1st/x_z.pdf
-
 #x->s when word starts with E and followed by consonant
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/x_s.txt | fstarcsort > output/1st/x_s.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/x_s.fst | dot -Tpdf  > output/1st/x_s.pdf
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/x.txt | fstarcsort > output/1st/x.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/x.fst | dot -Tpdf  > output/1st/x.pdf
 
-#Combine the three transductors:
-fstunion output/1st/s_z.fst output/1st/x_s.fst > output/1st/step_t1.fst
-fstunion output/1st/step_t1.fst output/1st/x_z.fst > output/1st/step_t2.fst
 
-fstrmepsilon output/1st/step_t2.fst > output/1st/step1.fst
+#Combine the two transductors:
+fstunion output/1st/s_z.fst output/1st/x.fst > output/1st/step_t1.fst
+
+fstrmepsilon output/1st/step_t1.fst > output/1st/step1.fst
 
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/step1.fst | dot -Tpdf  > output/1st/step1.pdf
 
