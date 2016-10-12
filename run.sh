@@ -119,6 +119,16 @@ rm -f output/3rd/xerox.fst output/3rd/xerox.pdf
 rm -f output/3rd/rato.fst output/3rd/rato.pdf
 rm -f output/3rd/hoje.fst output/3rd/hoje.pdf
 
+rm -f output/3rd/test1.fst output/3rd/test1.pdf
+rm -f output/3rd/test2.fst output/3rd/test2.pdf
+rm -f output/3rd/test3.fst output/3rd/test3.pdf
+rm -f output/3rd/test4.fst output/3rd/test4.pdf
+rm -f output/3rd/test5.fst output/3rd/test5.pdf
+rm -f output/3rd/test6.fst output/3rd/test6.pdf
+rm -f output/3rd/test7.fst output/3rd/test7.pdf
+rm -f output/3rd/test8.fst output/3rd/test8.pdf
+rm -f output/3rd/test9.fst output/3rd/test9.pdf
+
 	#teste "quanto"
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/quanto.txt | fstarcsort > output/3rd/quanto.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/quanto.fst | dot -Tpdf  > output/3rd/quanto.pdf
@@ -191,7 +201,29 @@ fstunion output/3rd/step2_t2.fst output/3rd/z_s.fst > output/3rd/step2_t3.fst
 fstunion output/3rd/step2_t3.fst output/3rd/x_ks.fst > output/3rd/step2_t4.fst
 
 
-
 fstrmepsilon output/3rd/step2_t4.fst > output/3rd/step2.fst
 
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/step2.fst | dot -Tpdf  > output/3rd/step2.pdf
+
+#tests
+fstcompose output/3rd/quanto.fst output/3rd/step2.fst > output/3rd/test1.fst
+fstcompose output/3rd/celofane.fst output/3rd/step2.fst > output/3rd/test2.fst
+fstcompose output/3rd/calar.fst output/3rd/step2.fst > output/3rd/test3.fst
+fstcompose output/3rd/paz.fst output/3rd/step2.fst > output/3rd/test4.fst
+fstcompose output/3rd/gelo.fst output/3rd/step2.fst > output/3rd/test5.fst
+fstcompose output/3rd/galo.fst output/3rd/step2.fst > output/3rd/test6.fst
+fstcompose output/3rd/xerox.fst output/3rd/step2.fst > output/3rd/test7.fst
+fstcompose output/3rd/rato.fst output/3rd/step2.fst > output/3rd/test8.fst
+fstcompose output/3rd/hoje.fst output/3rd/step2.fst > output/3rd/test9.fst
+
+#draw tests
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test1.fst | dot -Tpdf  > output/3rd/test1.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test2.fst | dot -Tpdf  > output/3rd/test2.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test3.fst | dot -Tpdf  > output/3rd/test3.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test4.fst | dot -Tpdf  > output/3rd/test4.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test5.fst | dot -Tpdf  > output/3rd/test5.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test6.fst | dot -Tpdf  > output/3rd/test6.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test7.fst | dot -Tpdf  > output/3rd/test7.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test8.fst | dot -Tpdf  > output/3rd/test8.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test9.fst | dot -Tpdf  > output/3rd/test9.pdf
+
