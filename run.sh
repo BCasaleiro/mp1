@@ -8,14 +8,12 @@ mkdir -p output
 mkdir -p output/1st
 
  	#transdutores
-rm -f output/1st/s_z.fst output/1st/s_z.pdf
-rm -f output/1st/x.fst output/1st/x.pdf
 
 
-	#temporary
-rm -f output/1st/step_t1.fst output/1st/step_t1.pdf
+rm -f output/1st/trans1.fst output/1st/trans1.pdf
 
 
+#main
 rm -f output/1st/step1.fst output/1st/step1.pdf
 	
 	#testes
@@ -46,19 +44,15 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/extra.fst | d
 
 #transdutores
 #s->z between vowels
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/s_z.txt | fstarcsort > output/1st/s_z.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/s_z.fst | dot -Tpdf  > output/1st/s_z.pdf 
-
 #x->z when word starts with E and followed by vowel
 #x->s when word starts with E and followed by consonant
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/x.txt | fstarcsort > output/1st/x.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/x.fst | dot -Tpdf  > output/1st/x.pdf
+
+#main transducer
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/1st/trans1.txt | fstarcsort > output/1st/trans1.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/trans1.fst | dot -Tpdf  > output/1st/trans1.pdf
 
 
-#Combine the two transductors:
-fstunion output/1st/s_z.fst output/1st/x.fst > output/1st/step_t1.fst
-
-fstrmepsilon output/1st/step_t1.fst > output/1st/step1.fst
+fstrmepsilon output/1st/trans1.fst > output/1st/step1.fst
 
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/1st/step1.fst | dot -Tpdf  > output/1st/step1.pdf
 
@@ -72,7 +66,7 @@ fstcompose output/1st/exame.fst output/1st/step1.fst > output/1st/test2.fst
 fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test2.fst | dot -Tpdf > output/1st/test2.pdf
 
 #exame
-fstcompose output/1st/exame.fst output/1st/step1.fst > output/1st/test3.fst
+fstcompose output/1st/asa.fst output/1st/step1.fst > output/1st/test3.fst
 fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test3.fst | dot -Tpdf > output/1st/test3.pdf
 
 #extra
