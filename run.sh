@@ -92,7 +92,10 @@ fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test4.fst | dot 
 mkdir -p output/3rd
 
  	#transdutores
-rm -f output/1st/r_4.fst output/1st/r_4.pdf
+rm -f output/3rd/r_4.fst output/3rd/r_4.pdf
+rm -f output/3rd/h_eps.fst output/3rd/h_eps.pdf
+rm -f output/3rd/q_k.fst output/3rd/q_k.pdf
+
 
 
 	#testes
@@ -148,3 +151,10 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/hoje.fst | do
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/r_4.txt | fstarcsort > output/3rd/r_4.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/r_4.fst | dot -Tpdf  > output/3rd/r_4.pdf 
 
+#h->eps
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/h_eps.txt | fstarcsort > output/3rd/h_eps.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/h_eps.fst | dot -Tpdf  > output/3rd/h_eps.pdf 
+
+#q->k
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/q_k.txt | fstarcsort > output/3rd/q_k.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/q_k.fst | dot -Tpdf  > output/3rd/q_k.pdf 
