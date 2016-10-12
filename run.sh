@@ -99,6 +99,8 @@ rm -f output/3rd/paz.fst output/3rd/paz.pdf
 rm -f output/3rd/gelo.fst output/3rd/gelo.pdf
 rm -f output/3rd/galo.fst output/3rd/galo.pdf
 rm -f output/3rd/xerox.fst output/3rd/xerox.pdf
+rm -f output/3rd/rato.fst output/3rd/rato.pdf
+rm -f output/3rd/hoje.fst output/3rd/hoje.pdf
 
 	#teste "quanto"
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/quanto.txt | fstarcsort > output/3rd/quanto.fst
@@ -127,3 +129,11 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/galo.fst | do
 	#teste "xerox"
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/xerox.txt | fstarcsort > output/3rd/xerox.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/xerox.fst | dot -Tpdf  > output/3rd/xerox.pdf
+
+	#teste "rato"
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/rato.txt | fstarcsort > output/3rd/rato.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/rato.fst | dot -Tpdf  > output/3rd/rato.pdf
+
+	#teste "hoje"
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/hoje.txt | fstarcsort > output/3rd/hoje.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/hoje.fst | dot -Tpdf  > output/3rd/hoje.pdf
