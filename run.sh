@@ -88,17 +88,10 @@ fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test4.fst | dot 
 mkdir -p output/3rd
 
  	#transdutores
-rm -f output/3rd/r_4.fst output/3rd/r_4.pdf
-rm -f output/3rd/h_eps.fst output/3rd/h_eps.pdf
-rm -f output/3rd/q_k.fst output/3rd/q_k.pdf
-rm -f output/3rd/z_s.fst output/3rd/z_s.pdf
-rm -f output/3rd/x_ks.fst output/3rd/x_ks.pdf
+rm -f output/3rd/trans1.fst output/3rd/trans1.pdf
 
 	#temporais
 rm -f output/3rd/step2_t1.fst output/3rd/step2_t1.pdf
-rm -f output/3rd/step2_t2.fst output/3rd/step2_t2.pdf
-rm -f output/3rd/step2_t3.fst output/3rd/step2_t3.pdf
-rm -f output/3rd/step2_t4.fst output/3rd/step2_t4.pdf
 
 	#main transducer
 rm -f output/3rd/step2.fst output/3rd/step2.pdf
@@ -164,40 +157,17 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/hoje.fst | do
 
 #transdutores
 #R->4 Beggining of words
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/r_4.txt | fstarcsort > output/3rd/r_4.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/r_4.fst | dot -Tpdf  > output/3rd/r_4.pdf 
-
 #h->eps
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/h_eps.txt | fstarcsort > output/3rd/h_eps.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/h_eps.fst | dot -Tpdf  > output/3rd/h_eps.pdf 
-
 #q->k
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/q_k.txt | fstarcsort > output/3rd/q_k.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/q_k.fst | dot -Tpdf  > output/3rd/q_k.pdf 
-
 #z->s In the end of word
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/z_s.txt | fstarcsort > output/3rd/z_s.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/z_s.fst | dot -Tpdf  > output/3rd/z_s.pdf 
-
 #x->ks In the end of word
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/x_ks.txt | fstarcsort > output/3rd/x_ks.fst
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/x_ks.fst | dot -Tpdf  > output/3rd/x_ks.pdf 
 
-#Combine the transductors:
-#r_4 and h_eps
-fstunion output/3rd/r_4.fst output/3rd/h_eps.fst > output/3rd/step2_t1.fst
-
-#step2_t1 and q_k
-fstunion output/3rd/step2_t1.fst output/3rd/q_k.fst > output/3rd/step2_t2.fst
-
-#step2_t2 and z_s
-fstunion output/3rd/step2_t2.fst output/3rd/z_s.fst > output/3rd/step2_t3.fst
-
-#step2_t3 and x_ks
-fstunion output/3rd/step2_t3.fst output/3rd/x_ks.fst > output/3rd/step2_t4.fst
+#Main transducer:
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3srd/trans3.txt | fstarcsort > output/3rd/trans3.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/trans3.fst | dot -Tpdf  > output/3rd/trans3.pdf
 
 
-fstrmepsilon output/3rd/step2_t4.fst > output/3rd/step2.fst
+fstrmepsilon output/3rd/trans3.fst > output/3rd/trans3.fst
 
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/step2.fst | dot -Tpdf  > output/3rd/step2.pdf
 
