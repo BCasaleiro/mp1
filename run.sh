@@ -98,7 +98,15 @@ rm -f output/3rd/q_k.fst output/3rd/q_k.pdf
 rm -f output/3rd/z_s.fst output/3rd/z_s.pdf
 rm -f output/3rd/x_ks.fst output/3rd/x_ks.pdf
 
+	#temporais
+rm -f output/3rd/step2_t1.fst output/3rd/step2_t1.pdf
+rm -f output/3rd/step2_t2.fst output/3rd/step2_t2.pdf
+rm -f output/3rd/step2_t3.fst output/3rd/step2_t3.pdf
+rm -f output/3rd/step2_t4.fst output/3rd/step2_t4.pdf
 
+	#main transducer
+rm -f output/3rd/step2.fst output/3rd/step2.pdf
+	
 
 	#testes
 rm -f output/3rd/quanto.fst output/3rd/quanto.pdf
@@ -168,3 +176,22 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/z_s.fst | dot
 #x->ks In the end of word
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/x_ks.txt | fstarcsort > output/3rd/x_ks.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/x_ks.fst | dot -Tpdf  > output/3rd/x_ks.pdf 
+
+#Combine the transductors:
+#r_4 and h_eps
+fstunion output/3rd/r_4.fst output/3rd/h_eps.fst > output/3rd/step2_t1.fst
+
+#step2_t1 and q_k
+fstunion output/3rd/step2_t1.fst output/3rd/q_k.fst > output/3rd/step2_t2.fst
+
+#step2_t2 and z_s
+fstunion output/3rd/step2_t2.fst output/3rd/z_s.fst > output/3rd/step2_t3.fst
+
+#step2_t3 and x_ks
+fstunion output/3rd/step2_t3.fst output/3rd/x_ks.fst > output/3rd/step2_t4.fst
+
+
+
+fstrmepsilon output/3rd/step2_t4.fst > output/3rd/step2.fst
+
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/step2.fst | dot -Tpdf  > output/3rd/step2.pdf
