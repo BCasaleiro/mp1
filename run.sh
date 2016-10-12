@@ -91,6 +91,10 @@ fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test4.fst | dot 
 
 mkdir -p output/3rd
 
+ 	#transdutores
+rm -f output/1st/r_4.fst output/1st/r_4.pdf
+
+
 	#testes
 rm -f output/3rd/quanto.fst output/3rd/quanto.pdf
 rm -f output/3rd/celofane.fst output/3rd/celofane.pdf
@@ -137,3 +141,10 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/rato.fst | do
 	#teste "hoje"
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/hoje.txt | fstarcsort > output/3rd/hoje.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/hoje.fst | dot -Tpdf  > output/3rd/hoje.pdf
+
+
+#transdutores
+#R->4 Beggining of words
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/r_4.txt | fstarcsort > output/3rd/r_4.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/r_4.fst | dot -Tpdf  > output/3rd/r_4.pdf 
+
