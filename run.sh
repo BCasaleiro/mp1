@@ -163,24 +163,24 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/hoje.fst | do
 #x->ks In the end of word
 
 #Main transducer:
-fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3srd/trans3.txt | fstarcsort > output/3rd/trans3.fst
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/3rd/trans3.txt | fstarcsort > output/3rd/trans3.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/trans3.fst | dot -Tpdf  > output/3rd/trans3.pdf
 
 
-fstrmepsilon output/3rd/trans3.fst > output/3rd/trans3.fst
+fstrmepsilon output/3rd/trans3.fst > output/3rd/step3.fst
 
-fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/step2.fst | dot -Tpdf  > output/3rd/step2.pdf
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/step3.fst | dot -Tpdf  > output/3rd/step2.pdf
 
 #tests
-fstcompose output/3rd/quanto.fst output/3rd/step2.fst > output/3rd/test1.fst
-fstcompose output/3rd/celofane.fst output/3rd/step2.fst > output/3rd/test2.fst
-fstcompose output/3rd/calar.fst output/3rd/step2.fst > output/3rd/test3.fst
-fstcompose output/3rd/paz.fst output/3rd/step2.fst > output/3rd/test4.fst
-fstcompose output/3rd/gelo.fst output/3rd/step2.fst > output/3rd/test5.fst
-fstcompose output/3rd/galo.fst output/3rd/step2.fst > output/3rd/test6.fst
-fstcompose output/3rd/xerox.fst output/3rd/step2.fst > output/3rd/test7.fst
-fstcompose output/3rd/rato.fst output/3rd/step2.fst > output/3rd/test8.fst
-fstcompose output/3rd/hoje.fst output/3rd/step2.fst > output/3rd/test9.fst
+fstcompose output/3rd/quanto.fst output/3rd/step3.fst > output/3rd/test1.fst
+fstcompose output/3rd/celofane.fst output/3rd/step3.fst > output/3rd/test2.fst
+fstcompose output/3rd/calar.fst output/3rd/step3.fst > output/3rd/test3.fst
+fstcompose output/3rd/paz.fst output/3rd/step3.fst > output/3rd/test4.fst
+fstcompose output/3rd/gelo.fst output/3rd/step3.fst > output/3rd/test5.fst
+fstcompose output/3rd/galo.fst output/3rd/step3.fst > output/3rd/test6.fst
+fstcompose output/3rd/xerox.fst output/3rd/step3.fst > output/3rd/test7.fst
+fstcompose output/3rd/rato.fst output/3rd/step3.fst > output/3rd/test8.fst
+fstcompose output/3rd/hoje.fst output/3rd/step3.fst > output/3rd/test9.fst
 
 #draw tests
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/test1.fst | dot -Tpdf  > output/3rd/test1.pdf
