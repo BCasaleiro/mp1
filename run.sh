@@ -91,10 +91,6 @@ fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/1st/test4.fst | dot 
 
 mkdir -p output/3rd
 
- 	#transdutores
-
-	#temporary
-
 	#testes
 rm -f output/3rd/quanto.fst output/3rd/quanto.pdf
 rm -f output/3rd/celofane.fst output/3rd/celofane.pdf
@@ -120,14 +116,14 @@ fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/calar.fst | d
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/paz.txt | fstarcsort > output/3rd/paz.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/paz.fst | dot -Tpdf  > output/3rd/paz.pdf
 
-#teste "gelo"
+	#teste "gelo"
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/gelo.txt | fstarcsort > output/3rd/gelo.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/gelo.fst | dot -Tpdf  > output/3rd/gelo.pdf
 
-#teste "galo"
+	#teste "galo"
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/galo.txt | fstarcsort > output/3rd/galo.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/galo.fst | dot -Tpdf  > output/3rd/galo.pdf
 
-#teste "xerox"
+	#teste "xerox"
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/3rd/xerox.txt | fstarcsort > output/3rd/xerox.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/3rd/xerox.fst | dot -Tpdf  > output/3rd/xerox.pdf
