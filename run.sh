@@ -184,5 +184,5 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test8.fst | dot -
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test9.fst | dot -Tpdf  > output/3rd/test9.pdf
 
 
-fstcompose output/1st/step1.fst output/3rd/step3.fst > output/3rd/stepT1.fst
+#fstcompose output/1st/step1.fst output/3rd/step3.fst > output/3rd/stepT1.fst
 #fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/stepT1.fst | dot -Tpdf  > output/3rd/stepT1.pdf
