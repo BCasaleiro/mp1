@@ -62,19 +62,19 @@ fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/final.fst | dot -T
 # Test Cases for the 1st Transducer
 #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/asa.txt | fstarcsort > output/1st/asa.fst
-fstcompose output/1st/asa.fst output/final/final.fst > output/1st/r-asa.fst
+fstcompose output/1st/asa.fst output/1st/1st.fst > output/1st/r-asa.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-asa.fst | dot -Tpdf > output/1st/r-asa.pdf
 
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/casa.txt | fstarcsort > output/1st/casa.fst
-fstcompose output/1st/casa.fst output/final/final.fst > output/1st/r-casa.fst
+fstcompose output/1st/casa.fst output/1st/1st.fst > output/1st/r-casa.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-casa.fst | dot -Tpdf > output/1st/r-casa.pdf
 
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/exame.txt | fstarcsort > output/1st/exame.fst
-fstcompose output/1st/exame.fst output/final/final.fst > output/1st/r-exame.fst
+fstcompose output/1st/exame.fst output/1st/1st.fst > output/1st/r-exame.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-exame.fst | dot -Tpdf > output/1st/r-exame.pdf
 
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/extra.txt | fstarcsort > output/1st/extra.fst
-fstcompose output/1st/extra.fst output/final/final.fst > output/1st/r-extra.fst
+fstcompose output/1st/extra.fst output/1st/1st.fst > output/1st/r-extra.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-extra.fst | dot -Tpdf > output/1st/r-extra.pdf
 
 # Test Cases for the 2nd Transducer
