@@ -69,10 +69,6 @@ fstcompose output/1st/extra.fst output/1st/step1.fst > output/1st/test4.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/test4.fst | dot -Tpdf > output/1st/test4.pdf
 
 
-#2nd
-
-
-
 #3rd
 
 mkdir -p output/3rd
@@ -182,6 +178,10 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test6.fst | dot -
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test7.fst | dot -Tpdf  > output/3rd/test7.pdf
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test8.fst | dot -Tpdf  > output/3rd/test8.pdf
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test9.fst | dot -Tpdf  > output/3rd/test9.pdf
+
+
+#fstcompose output/1st/step1.fst output/3rd/step3.fst > output/3rd/stepT1.fst
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/stepT1.fst | dot -Tpdf  > output/3rd/stepT1.pdf
 
 
 #-------------------------------------------------------------------------------
@@ -371,3 +371,4 @@ fstcompose output/4th/banana.fst output/4th/4th.fst > output/4th/r-banana.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-banana.fst | dot -Tpdf > output/4th/r-banana.pdf
 
 rm -r output/4th/*.fst
+
