@@ -77,10 +77,10 @@ mkdir -p output/3rd
 rm -f output/3rd/trans1.fst output/3rd/trans1.pdf
 
 	#temporais
-rm -f output/3rd/step2_t1.fst output/3rd/step2_t1.pdf
+rm -f output/3rd/step_t1.fst output/3rd/step3_t1.pdf
 
 	#main transducer
-rm -f output/3rd/step2.fst output/3rd/step2.pdf
+rm -f output/3rd/step3.fst output/3rd/step3.pdf
 
 
 	#testes
@@ -155,7 +155,7 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/trans3.fst | dot 
 
 fstrmepsilon output/3rd/trans3.fst > output/3rd/step3.fst
 
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/step3.fst | dot -Tpdf  > output/3rd/step2.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/step3.fst | dot -Tpdf  > output/3rd/step3.pdf
 
 #tests
 fstcompose output/3rd/quanto.fst output/3rd/step3.fst > output/3rd/test1.fst
@@ -192,7 +192,7 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test9.fst | dot -
 mkdir -p output/2nd
 
 rm -f output/2nd/*.pdf
-
+rm -r output/2nd/*.fst
 # ch -> x
 #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd/ch-x.txt | fstarcsort > output/2nd/ch-x.fst
@@ -347,12 +347,13 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/2nd/ss-s/sossego.txt |
 fstcompose output/2nd/sossego.fst output/2nd/t-u4.fst > output/2nd/r-compose-sossego.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/r-compose-sossego.fst | dot -Tpdf > output/2nd/r-compose-sossego.pdf
 
-rm -r output/2nd/*.fst
+
 
 # 4th
 mkdir -p output/4th
 
 rm -f output/4th/*.pdf
+rm -r output/4th/*.fst
 
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/4th.txt | fstarcsort > output/4th/4th.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/4th/4th.fst | dot -Tpdf  > output/4th/4th.pdf
@@ -370,5 +371,7 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/banana.txt | fstar
 fstcompose output/4th/banana.fst output/4th/4th.fst > output/4th/r-banana.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-banana.fst | dot -Tpdf > output/4th/r-banana.pdf
 
-rm -r output/4th/*.fst
 
+
+#testes
+fstcompile output/3rd/step3
