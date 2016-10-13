@@ -69,6 +69,7 @@
 1	8	g	k
 1	4	x	k
 1	6	z	s
+1	11	x	x
 
 2	1	eps	eps
 3	1	eps	eps
@@ -112,8 +113,7 @@
 
 
 
-
-1	11	x	x	
+	
 
 11	2	h	eps
 11	3	q	k
