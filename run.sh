@@ -12,55 +12,6 @@ rm -f output/2nd/*.pdf
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd.txt | fstarcsort > output/2nd/2nd.fst
 fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/2nd.fst | dot -Tpdf  > output/2nd/2nd.pdf
 
-# ch -> x
-#-------------------------------------------------------------------------------
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/ch-x.txt | fstarcsort > output/2nd/ch-x.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/ch-x.fst | dot -Tpdf  > output/2nd/ch-x.pdf
-
-# lh -> 2
-#-------------------------------------------------------------------------------
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/lh-2.txt | fstarcsort > output/2nd/lh-2.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/lh-2.fst | dot -Tpdf  > output/2nd/lh-2.pdf
-
-# nh -> 3
-#-------------------------------------------------------------------------------
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/nh-3.txt | fstarcsort > output/2nd/nh-3.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/nh-3.fst | dot -Tpdf  > output/2nd/nh-3.pdf
-
-# rr -> 4
-#-------------------------------------------------------------------------------
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/rr-4.txt | fstarcsort > output/2nd/rr-4.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/rr-4.fst | dot -Tpdf  > output/2nd/rr-4.pdf
-
-# ss -> s
-#-------------------------------------------------------------------------------
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/ss-s.txt | fstarcsort > output/2nd/ss-s.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/ss-s.fst | dot -Tpdf  > output/2nd/ss-s.pdf
-
-#-------------------------------------------------------------------------------
-# compose between ch -> x and lh -> 2
-#-------------------------------------------------------------------------------
-#fstcompose output/2nd/ch-x.fst output/2nd/lh-2.fst > output/2nd/t-u1.fst
-#fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/t-u1.fst | dot -Tpdf > output/2nd/t-u1.pdf
-
-#-------------------------------------------------------------------------------
-# compose between u1 and nh -> 3
-#-------------------------------------------------------------------------------
-#fstcompose output/2nd/t-u1.fst output/2nd/nh-3.fst > output/2nd/t-u2.fst
-#fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/t-u2.fst | dot -Tpdf > output/2nd/t-u2.pdf
-
-#-------------------------------------------------------------------------------
-# compose between u2 and rr -> 4
-#-------------------------------------------------------------------------------
-#fstcompose output/2nd/t-u2.fst output/2nd/rr-4.fst > output/2nd/t-u3.fst
-#fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/t-u3.fst | dot -Tpdf > output/2nd/t-u3.pdf
-
-#-------------------------------------------------------------------------------
-# compose between u3 and ss-s
-#-------------------------------------------------------------------------------
-#fstcompose output/2nd/t-u3.fst output/2nd/ss-s.fst > output/2nd/t-u4.fst
-#fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/t-u4.fst | dot -Tpdf > output/2nd/t-u4.pdf
-
 # test cases
 fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/ch-x/chucha.txt | fstarcsort > output/2nd/chucha.fst
 fstcompose output/2nd/chucha.fst output/2nd/2nd.fst > output/2nd/r-compose-chucha.fst
