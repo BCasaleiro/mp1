@@ -125,8 +125,26 @@ fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-raro.fst | dot
 
 # ss -> s
 #-------------------------------------------------------------------------------
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/ss-s.txt | fstarcsort > output/2nd/ss-s.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/ss-s.fst | dot -Tpdf  > output/2nd/ss-s.pdf
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/ss-s.txt | fstarcsort > output/2nd/ss-s.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/ss-s.fst | dot -Tpdf  > output/2nd/ss-s.pdf
+
+# test cases
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/ss-s/espesso.txt | fstarcsort > output/2nd/espesso.fst
+fstcompose output/2nd/espesso.fst output/2nd/ss-s.fst > output/2nd/r-espesso.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-espesso.fst | dot -Tpdf > output/2nd/r-espesso.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/ss-s/massa.txt | fstarcsort > output/2nd/massa.fst
+fstcompose output/2nd/massa.fst output/2nd/ss-s.fst > output/2nd/r-massa.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-massa.fst | dot -Tpdf > output/2nd/r-massa.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/ss-s/microssegundo.txt | fstarcsort > output/2nd/microssegundo.fst
+fstcompose output/2nd/microssegundo.fst output/2nd/ss-s.fst > output/2nd/r-microssegundo.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-microssegundo.fst | dot -Tpdf > output/2nd/r-microssegundo.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/ss-s/sossego.txt | fstarcsort > output/2nd/sossego.fst
+fstcompose output/2nd/sossego.fst output/2nd/ss-s.fst > output/2nd/r-sossego.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-sossego.fst | dot -Tpdf > output/2nd/r-sossego.pdf
+
 
 #-------------------------------------------------------------------------------
 # union between ch -> x and lh -> 2
