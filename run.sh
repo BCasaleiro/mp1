@@ -155,9 +155,29 @@ fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-nhazinha.fst |
 
 # rr -> 4
 #-------------------------------------------------------------------------------
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/rr-4.txt | fstarcsort > output/2nd/rr-4.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/rr-4.fst | dot -Tpdf  > output/2nd/rr-4.pdf
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/2nd/rr-4.txt | fstarcsort > output/2nd/rr-4.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/2nd/rr-4.fst | dot -Tpdf  > output/2nd/rr-4.pdf
 
+# test cases
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/rr-4/arrasar.txt | fstarcsort > output/2nd/arrasar.fst
+fstcompose output/2nd/arrasar.fst output/2nd/rr-4.fst > output/2nd/r-arrasar.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-arrasar.fst | dot -Tpdf > output/2nd/r-arrasar.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/rr-4/carro.txt | fstarcsort > output/2nd/carro.fst
+fstcompose output/2nd/carro.fst output/2nd/rr-4.fst > output/2nd/r-carro.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-carro.fst | dot -Tpdf > output/2nd/r-carro.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/rr-4/corrupto.txt | fstarcsort > output/2nd/corrupto.fst
+fstcompose output/2nd/corrupto.fst output/2nd/rr-4.fst > output/2nd/r-corrupto.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-corrupto.fst | dot -Tpdf > output/2nd/r-corrupto.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/rr-4/errar.txt | fstarcsort > output/2nd/errar.fst
+fstcompose output/2nd/errar.fst output/2nd/rr-4.fst > output/2nd/r-errar.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-errar.fst | dot -Tpdf > output/2nd/r-errar.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/2nd/rr-4/raro.txt | fstarcsort > output/2nd/raro.fst
+fstcompose output/2nd/raro.fst output/2nd/rr-4.fst > output/2nd/r-raro.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-raro.fst | dot -Tpdf > output/2nd/r-raro.pdf
 
 # ss -> s
 #-------------------------------------------------------------------------------
