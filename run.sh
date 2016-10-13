@@ -17,8 +17,8 @@ rm -f output/final/*.fst
 #-------------------------------------------------------------------------------
 # 1st Step
 #-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/1st.txt | fstarcsort > output/1st/t-1st.fst
-fstrmepsilon output/1st/t-1st.fst | fstarcsort > output/1st/1st.fst
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/1st.txt | fstarcsort > output/1st/1st.fst
+# fstrmepsilon output/1st/t-1st.fst | fstarcsort > output/1st/1st.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/1st/1st.fst | dot -Tpdf  > output/1st/1st.pdf
 
 #-------------------------------------------------------------------------------
@@ -30,8 +30,8 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/2nd.fst | dot -Tp
 #-------------------------------------------------------------------------------
 # 3rd Step
 #-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/3rd.txt | fstarcsort > output/3rd/t-3rd.fst
-fstrmepsilon output/3rd/t-3rd.fst | fstarcsort > output/3rd/3rd.fst
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/3rd.txt | fstarcsort > output/3rd/3rd.fst
+# fstrmepsilon output/3rd/t-3rd.fst | fstarcsort > output/3rd/3rd.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/3rd.fst | dot -Tpdf  > output/3rd/3rd.pdf
 
 #-------------------------------------------------------------------------------
@@ -185,73 +185,73 @@ fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/r-sossego.fst | dot 
 
 # Test Cases for the 3rd Transducer
 #-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/calar.txt | fstarcsort > output/3rd/calar.fst
-fstcompose output/3rd/calar.fst output/final/final.fst > output/3rd/r-calar.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-calar.fst | dot -Tpdf > output/3rd/r-calar.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/celofane.txt | fstarcsort > output/3rd/celofane.fst
-fstcompose output/3rd/celofane.fst output/final/final.fst > output/3rd/r-celofane.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-celofane.fst | dot -Tpdf > output/3rd/r-celofane.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/galo.txt | fstarcsort > output/3rd/galo.fst
-fstcompose output/3rd/galo.fst output/final/final.fst > output/3rd/r-galo.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-galo.fst | dot -Tpdf > output/3rd/r-galo.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/gelo.txt | fstarcsort > output/3rd/gelo.fst
-fstcompose output/3rd/gelo.fst output/final/final.fst > output/3rd/r-gelo.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-gelo.fst | dot -Tpdf > output/3rd/r-gelo.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/hoje.txt | fstarcsort > output/3rd/hoje.fst
-fstcompose output/3rd/hoje.fst output/final/final.fst > output/3rd/r-hoje.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-hoje.fst | dot -Tpdf > output/3rd/r-hoje.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/paz.txt | fstarcsort > output/3rd/paz.fst
-fstcompose output/3rd/paz.fst output/final/final.fst > output/3rd/r-paz.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-paz.fst | dot -Tpdf > output/3rd/r-paz.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/quanto.txt | fstarcsort > output/3rd/quanto.fst
-fstcompose output/3rd/quanto.fst output/final/final.fst > output/3rd/r-quanto.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-quanto.fst | dot -Tpdf > output/3rd/r-quanto.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/rato.txt | fstarcsort > output/3rd/rato.fst
-fstcompose output/3rd/rato.fst output/final/final.fst > output/3rd/r-rato.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-rato.fst | dot -Tpdf > output/3rd/r-rato.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/xerox.txt | fstarcsort > output/3rd/xerox.fst
-fstcompose output/3rd/xerox.fst output/final/final.fst > output/3rd/r-xerox.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-xerox.fst | dot -Tpdf > output/3rd/r-xerox.pdf
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/calar.txt | fstarcsort > output/3rd/calar.fst
+# fstcompose output/3rd/calar.fst output/final/final.fst > output/3rd/r-calar.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-calar.fst | dot -Tpdf > output/3rd/r-calar.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/celofane.txt | fstarcsort > output/3rd/celofane.fst
+# fstcompose output/3rd/celofane.fst output/final/final.fst > output/3rd/r-celofane.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-celofane.fst | dot -Tpdf > output/3rd/r-celofane.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/galo.txt | fstarcsort > output/3rd/galo.fst
+# fstcompose output/3rd/galo.fst output/final/final.fst > output/3rd/r-galo.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-galo.fst | dot -Tpdf > output/3rd/r-galo.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/gelo.txt | fstarcsort > output/3rd/gelo.fst
+# fstcompose output/3rd/gelo.fst output/final/final.fst > output/3rd/r-gelo.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-gelo.fst | dot -Tpdf > output/3rd/r-gelo.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/hoje.txt | fstarcsort > output/3rd/hoje.fst
+# fstcompose output/3rd/hoje.fst output/final/final.fst > output/3rd/r-hoje.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-hoje.fst | dot -Tpdf > output/3rd/r-hoje.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/paz.txt | fstarcsort > output/3rd/paz.fst
+# fstcompose output/3rd/paz.fst output/final/final.fst > output/3rd/r-paz.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-paz.fst | dot -Tpdf > output/3rd/r-paz.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/quanto.txt | fstarcsort > output/3rd/quanto.fst
+# fstcompose output/3rd/quanto.fst output/final/final.fst > output/3rd/r-quanto.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-quanto.fst | dot -Tpdf > output/3rd/r-quanto.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/rato.txt | fstarcsort > output/3rd/rato.fst
+# fstcompose output/3rd/rato.fst output/final/final.fst > output/3rd/r-rato.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-rato.fst | dot -Tpdf > output/3rd/r-rato.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/xerox.txt | fstarcsort > output/3rd/xerox.fst
+# fstcompose output/3rd/xerox.fst output/final/final.fst > output/3rd/r-xerox.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-xerox.fst | dot -Tpdf > output/3rd/r-xerox.pdf
 
 # Test Cases for the 4th Transducer
 #-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/aleluia.txt | fstarcsort > output/4th/aleluia.fst
-fstcompose output/4th/aleluia.fst output/final/final.fst > output/4th/r-aleluia.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-aleluia.fst | dot -Tpdf > output/4th/r-aleluia.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/aula.txt | fstarcsort > output/4th/aula.fst
-fstcompose output/4th/aula.fst output/final/final.fst > output/4th/r-aula.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-aula.fst | dot -Tpdf > output/4th/r-aula.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/banana.txt | fstarcsort > output/4th/banana.fst
-fstcompose output/4th/banana.fst output/final/final.fst > output/4th/r-banana.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-banana.fst | dot -Tpdf > output/4th/r-banana.pdf
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/aleluia.txt | fstarcsort > output/4th/aleluia.fst
+# fstcompose output/4th/aleluia.fst output/final/final.fst > output/4th/r-aleluia.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-aleluia.fst | dot -Tpdf > output/4th/r-aleluia.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/aula.txt | fstarcsort > output/4th/aula.fst
+# fstcompose output/4th/aula.fst output/final/final.fst > output/4th/r-aula.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-aula.fst | dot -Tpdf > output/4th/r-aula.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/banana.txt | fstarcsort > output/4th/banana.fst
+# fstcompose output/4th/banana.fst output/final/final.fst > output/4th/r-banana.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-banana.fst | dot -Tpdf > output/4th/r-banana.pdf
 
 # Test Cases for the Final Transducer
 #-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/bernardo.txt | fstarcsort > output/final/bernardo.fst
-fstcompose output/final/bernardo.fst output/final/final.fst > output/4th/r-bernardo.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-bernardo.fst | dot -Tpdf > output/4th/r-bernardo.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/casaleiro.txt | fstarcsort > output/final/casaleiro.fst
-fstcompose output/final/casaleiro.fst output/final/final.fst > output/4th/r-casaleiro.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-casaleiro.fst | dot -Tpdf > output/4th/r-casaleiro.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/joao.txt | fstarcsort > output/final/joao.fst
-fstcompose output/final/joao.fst output/final/final.fst > output/4th/r-joao.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-joao.fst | dot -Tpdf > output/4th/r-joao.pdf
-
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/godinho.txt | fstarcsort > output/final/godinho.fst
-fstcompose output/final/godinho.fst output/final/final.fst > output/4th/r-godinho.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-godinho.fst | dot -Tpdf > output/4th/r-godinho.pdf
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/bernardo.txt | fstarcsort > output/final/bernardo.fst
+# fstcompose output/final/bernardo.fst output/final/final.fst > output/final/r-bernardo.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-bernardo.fst | dot -Tpdf > output/final/r-bernardo.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/casaleiro.txt | fstarcsort > output/final/casaleiro.fst
+# fstcompose output/final/casaleiro.fst output/final/final.fst > output/final/r-casaleiro.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-casaleiro.fst | dot -Tpdf > output/final/r-casaleiro.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/joao.txt | fstarcsort > output/final/joao.fst
+# fstcompose output/final/joao.fst output/final/final.fst > output/final/r-joao.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-joao.fst | dot -Tpdf > output/final/r-joao.pdf
+#
+# fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/godinho.txt | fstarcsort > output/final/godinho.fst
+# fstcompose output/final/godinho.fst output/final/final.fst > output/final/r-godinho.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-godinho.fst | dot -Tpdf > output/final/r-godinho.pdf
 
 #-------------------------------------------------------------------------------
 # Cleaning up the house
