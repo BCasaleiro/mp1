@@ -47,7 +47,7 @@ fstcompose output/2nd/t-u1.fst output/2nd/nh-3.fst > output/2nd/t-u2.fst
 fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/t-u2.fst | dot -Tpdf > output/2nd/t-u2.pdf
 
 #-------------------------------------------------------------------------------
-# compose between u2 and rr-4
+# compose between u2 and rr -> 4
 #-------------------------------------------------------------------------------
 fstcompose output/2nd/t-u2.fst output/2nd/rr-4.fst > output/2nd/t-u3.fst
 fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/t-u3.fst | dot -Tpdf > output/2nd/t-u3.pdf
