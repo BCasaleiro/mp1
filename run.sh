@@ -169,15 +169,15 @@ fstcompose output/3rd/rato.fst output/3rd/step3.fst > output/3rd/test8.fst
 fstcompose output/3rd/hoje.fst output/3rd/step3.fst > output/3rd/test9.fst
 
 #draw tests
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test1.fst | dot -Tpdf  > output/3rd/test1.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test2.fst | dot -Tpdf  > output/3rd/test2.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test3.fst | dot -Tpdf  > output/3rd/test3.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test4.fst | dot -Tpdf  > output/3rd/test4.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test5.fst | dot -Tpdf  > output/3rd/test5.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test6.fst | dot -Tpdf  > output/3rd/test6.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test7.fst | dot -Tpdf  > output/3rd/test7.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test8.fst | dot -Tpdf  > output/3rd/test8.pdf
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test9.fst | dot -Tpdf  > output/3rd/test9.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test1.fst | dot -Tpdf  > output/3rd/test1.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test2.fst | dot -Tpdf  > output/3rd/test2.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test3.fst | dot -Tpdf  > output/3rd/test3.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test4.fst | dot -Tpdf  > output/3rd/test4.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test5.fst | dot -Tpdf  > output/3rd/test5.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test6.fst | dot -Tpdf  > output/3rd/test6.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test7.fst | dot -Tpdf  > output/3rd/test7.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test8.fst | dot -Tpdf  > output/3rd/test8.pdf
+#fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test9.fst | dot -Tpdf  > output/3rd/test9.pdf
 
 
 #fstcompose output/1st/step1.fst output/3rd/step3.fst > output/3rd/stepT1.fst
@@ -189,55 +189,7 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test9.fst | dot -
 mkdir -p output/2nd
 
 rm -f output/2nd/*.pdf
-rm -r output/2nd/*.fst
-# ch -> x
-#-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd/ch-x.txt | fstarcsort > output/2nd/ch-x.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/ch-x.fst | dot -Tpdf  > output/2nd/ch-x.pdf
-
-# lh -> 2
-#-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd/lh-2.txt | fstarcsort > output/2nd/lh-2.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/lh-2.fst | dot -Tpdf  > output/2nd/lh-2.pdf
-
-# nh -> 3
-#-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd/nh-3.txt | fstarcsort > output/2nd/nh-3.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/nh-3.fst | dot -Tpdf  > output/2nd/nh-3.pdf
-
-# rr -> 4
-#-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd/rr-4.txt | fstarcsort > output/2nd/rr-4.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/rr-4.fst | dot -Tpdf  > output/2nd/rr-4.pdf
-
-# ss -> s
-#-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd/ss-s.txt | fstarcsort > output/2nd/ss-s.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/ss-s.fst | dot -Tpdf  > output/2nd/ss-s.pdf
-
-#-------------------------------------------------------------------------------
-# compose between ch -> x and lh -> 2
-#-------------------------------------------------------------------------------
-fstcompose output/2nd/ch-x.fst output/2nd/lh-2.fst > output/2nd/t-u1.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/t-u1.fst | dot -Tpdf > output/2nd/t-u1.pdf
-
-#-------------------------------------------------------------------------------
-# compose between u1 and nh -> 3
-#-------------------------------------------------------------------------------
-fstcompose output/2nd/t-u1.fst output/2nd/nh-3.fst > output/2nd/t-u2.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/t-u2.fst | dot -Tpdf > output/2nd/t-u2.pdf
-
-#-------------------------------------------------------------------------------
-# compose between u2 and rr -> 4
-#-------------------------------------------------------------------------------
-fstcompose output/2nd/t-u2.fst output/2nd/rr-4.fst > output/2nd/t-u3.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/t-u3.fst | dot -Tpdf > output/2nd/t-u3.pdf
-
-#-------------------------------------------------------------------------------
-# compose between u3 and ss-s
-#-------------------------------------------------------------------------------
-fstcompose output/2nd/t-u3.fst output/2nd/ss-s.fst > output/2nd/t-u4.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/t-u4.fst | dot -Tpdf > output/2nd/t-u4.pdf
+rm -f output/2nd/*.fst
 
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd.txt | fstarcsort > output/2nd/2nd.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/2nd.fst | dot -Tpdf  > output/2nd/2nd.pdf
@@ -357,7 +309,7 @@ fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/r-sossego.fst | dot 
 mkdir -p output/4th
 
 rm -f output/4th/*.pdf
-rm -r output/4th/*.fst
+rm -f output/4th/*.fst
 
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/4th.txt | fstarcsort > output/4th/4th.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/4th/4th.fst | dot -Tpdf  > output/4th/4th.pdf
@@ -377,6 +329,45 @@ fstcompose output/4th/banana.fst output/4th/4th.fst > output/4th/r-banana.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-banana.fst | dot -Tpdf > output/4th/r-banana.pdf
 
 
-
+###########################
 #testes
 
+fstcompose output/3rd/step3.fst output/4th/4th.fst > output/4th/trans.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/trans.fst | dot -Tpdf > output/4th/trans.pdf
+
+# test cases 4th
+#-------------------------------------------------------------------------------
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/aleluia.txt | fstarcsort > output/4th/aleluia.fst
+fstcompose output/4th/aleluia.fst output/4th/trans.fst > output/4th/r-aleluia.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-aleluia.fst | dot -Tpdf > output/4th/r-aleluia.pdf
+
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/aula.txt | fstarcsort > output/4th/aula.fst
+fstcompose output/4th/aula.fst output/4th/trans.fst > output/4th/r-aula.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-aula.fst | dot -Tpdf > output/4th/r-aula.pdf
+
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/banana.txt | fstarcsort > output/4th/banana.fst
+fstcompose output/4th/banana.fst output/4th/trans.fst > output/4th/r-banana.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-banana.fst | dot -Tpdf > output/4th/r-banana.pdf
+
+
+#tests 3rd
+fstcompose output/3rd/quanto.fst output/4th/trans.fst > output/3rd/test1.fst
+fstcompose output/3rd/celofane.fst output/4th/trans.fst > output/3rd/test2.fst
+fstcompose output/3rd/calar.fst output/4th/trans.fst > output/3rd/test3.fst
+fstcompose output/3rd/paz.fst output/4th/trans.fst > output/3rd/test4.fst
+fstcompose output/3rd/gelo.fst output/4th/trans.fst > output/3rd/test5.fst
+fstcompose output/3rd/galo.fst output/4th/trans.fst > output/3rd/test6.fst
+fstcompose output/3rd/xerox.fst output/4th/trans.fst > output/3rd/test7.fst
+fstcompose output/3rd/rato.fst output/4th/trans.fst > output/3rd/test8.fst
+fstcompose output/3rd/hoje.fst output/4th/trans.fst > output/3rd/test9.fst
+
+#draw tests
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test1.fst | dot -Tpdf  > output/3rd/test1.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test2.fst | dot -Tpdf  > output/3rd/test2.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test3.fst | dot -Tpdf  > output/3rd/test3.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test4.fst | dot -Tpdf  > output/3rd/test4.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test5.fst | dot -Tpdf  > output/3rd/test5.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test6.fst | dot -Tpdf  > output/3rd/test6.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test7.fst | dot -Tpdf  > output/3rd/test7.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test8.fst | dot -Tpdf  > output/3rd/test8.pdf
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/3rd/test9.fst | dot -Tpdf  > output/3rd/test9.pdf
