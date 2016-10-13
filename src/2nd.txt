@@ -92,7 +92,6 @@
 8 0 d d
 8 0 f f
 8 0 g g
-8 0 h h
 8 0 j j
 8 0 k k
 8 0 l l
