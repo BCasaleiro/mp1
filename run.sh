@@ -164,3 +164,26 @@ fstcompose output/2nd/sossego.fst output/2nd/t-u4.fst > output/2nd/r-compose-sos
 fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-compose-sossego.fst | dot -Tpdf > output/2nd/r-compose-sossego.pdf
 
 rm -r output/2nd/*.fst
+
+# 4th
+mkdir -p output/4th
+
+rm -f output/4th/*.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  src/4th.txt | fstarcsort > output/4th/4th.fst
+fstdraw    --isymbols=letras.sym --osymbols=letras.sym  output/4th/4th.fst | dot -Tpdf  > output/4th/4th.pdf
+
+# test cases
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/4th/aleluia.txt | fstarcsort > output/4th/aleluia.fst
+fstcompose output/4th/aleluia.fst output/4th/4th.fst > output/4th/r-aleluia.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/4th/aleluia.fst | dot -Tpdf > output/4th/aleluia.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/4th/aula.txt | fstarcsort > output/4th/aula.fst
+fstcompose output/4th/aula.fst output/4th/4th.fst > output/4th/r-aula.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/4th/aula.fst | dot -Tpdf > output/4th/aula.pdf
+
+fstcompile --isymbols=letras.sym --osymbols=letras.sym  input/4th/banana.txt | fstarcsort > output/4th/banana.fst
+fstcompose output/4th/banana.fst output/4th/4th.fst > output/4th/r-banana.fst
+fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/4th/banana.fst | dot -Tpdf > output/4th/banana.pdf
+
+rm -r output/4th/*.fst
