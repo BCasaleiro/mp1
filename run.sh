@@ -147,9 +147,9 @@ fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/r-sossego.fst | 
 
 
 #-------------------------------------------------------------------------------
-# union between ch -> x and lh -> 2
+# compose between ch -> x and lh -> 2
 #-------------------------------------------------------------------------------
-fstunion output/2nd/ch-x.fst output/2nd/lh-2.fst > output/2nd/t-u1.fst
+fstcompose output/2nd/ch-x.fst output/2nd/lh-2.fst > output/2nd/t-u1.fst
 fstdraw --isymbols=letras.sym --osymbols=letras.sym  output/2nd/t-u1.fst | dot -Tpdf > output/2nd/t-u1.pdf
 
 # test cases
