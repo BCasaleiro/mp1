@@ -21,40 +21,40 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/1st.txt | fstarcsort > o
 fstrmepsilon output/1st/t-1st.fst | fstarcsort > output/1st/1st.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/1st/1st.fst | dot -Tpdf  > output/1st/1st.pdf
 
-#-------------------------------------------------------------------------------
-# 2nd Step
-#-------------------------------------------------------------------------------
+# #-------------------------------------------------------------------------------
+# # 2nd Step
+# #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd.txt | fstarcsort > output/2nd/t-2nd.fst
 fstrmepsilon output/2nd/t-2nd.fst | fstarcsort > output/2nd/2nd.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/2nd.fst | dot -Tpdf  > output/2nd/2nd.pdf
 
-#-------------------------------------------------------------------------------
-# 3rd Step
-#-------------------------------------------------------------------------------
+# #-------------------------------------------------------------------------------
+# # 3rd Step
+# #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/3rd.txt | fstarcsort > output/3rd/t-3rd.fst
 fstrmepsilon output/3rd/t-3rd.fst | fstarcsort > output/3rd/3rd.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/3rd.fst | dot -Tpdf  > output/3rd/3rd.pdf
 
-#-------------------------------------------------------------------------------
-# 4th Step
-#-------------------------------------------------------------------------------
+# #-------------------------------------------------------------------------------
+# # 4th Step
+# #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/4th.txt | fstarcsort > output/4th/t-4th.fst
 fstrmepsilon output/4th/t-4th.fst | fstarcsort > output/4th/4th.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/4th/4th.fst | dot -Tpdf  > output/4th/4th.pdf
 
-#-------------------------------------------------------------------------------
-# Composing Final Transducer
-#-------------------------------------------------------------------------------
-# 1st with 2nd -> t-1
-#-------------------------------------------------------------------------------
+# #-------------------------------------------------------------------------------
+# # Composing Final Transducer
+# #-------------------------------------------------------------------------------
+# # 1st with 2nd -> t-1
+# #-------------------------------------------------------------------------------
 fstcompose output/1st/1st.fst output/2nd/2nd.fst > output/final/t-1.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-1.fst | dot -Tpdf > output/final/t-1.pdf
-# t-1 with 3rd -> t-2
-#-------------------------------------------------------------------------------
+# # t-1 with 3rd -> t-2
+# #-------------------------------------------------------------------------------
 fstcompose output/final/t-1.fst output/3rd/3rd.fst > output/final/t-2.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-2.fst | dot -Tpdf > output/final/t-2.pdf
-# t-2 with 4th -> final
-#-------------------------------------------------------------------------------
+# # t-2 with 4th -> final
+# #-------------------------------------------------------------------------------
 fstcompose output/final/t-2.fst output/4th/4th.fst > output/final/final.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/final.fst | dot -Tpdf > output/final/final.pdf
 
@@ -63,6 +63,7 @@ fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/final.fst | dot -T
 #-------------------------------------------------------------------------------
 # Test Cases for the 1st Transducer
 #-------------------------------------------------------------------------------
+echo 'starting testing for 1st transducer tests'
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/asa.txt | fstarcsort > output/1st/asa.fst
 fstcompose output/1st/asa.fst output/final/final.fst > output/1st/r-asa.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-asa.fst | dot -Tpdf > output/1st/r-asa.pdf
@@ -79,8 +80,21 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/extra.txt | fstarc
 fstcompose output/1st/extra.fst output/final/final.fst > output/1st/r-extra.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-extra.fst | dot -Tpdf > output/1st/r-extra.pdf
 
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/exasa.txt | fstarcsort > output/1st/exasa.fst
+fstcompose output/1st/exasa.fst output/final/final.fst > output/1st/r-exasa.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-exasa.fst | dot -Tpdf > output/1st/r-exasa.pdf
+
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/estra.txt | fstarcsort > output/1st/estra.fst
+fstcompose output/1st/estra.fst output/final/final.fst > output/1st/r-estra.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-estra.fst | dot -Tpdf > output/1st/r-estra.pdf
+
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/esa.txt | fstarcsort > output/1st/esa.fst
+fstcompose output/1st/esa.fst output/final/final.fst > output/1st/r-esa.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-esa.fst | dot -Tpdf > output/1st/r-esa.pdf
+
 # Test Cases for the 2nd Transducer
 #-------------------------------------------------------------------------------
+echo 'starting testing for 2nd transducer tests'
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/2nd/ch-x/chucha.txt | fstarcsort > output/2nd/chucha.fst
 fstcompose output/2nd/chucha.fst output/final/final.fst > output/2nd/r-chucha.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/r-chucha.fst | dot -Tpdf > output/2nd/r-chucha.pdf
@@ -185,8 +199,9 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/2nd/ss-s/sossego.txt |
 fstcompose output/2nd/sossego.fst output/final/final.fst > output/2nd/r-sossego.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/2nd/r-sossego.fst | dot -Tpdf > output/2nd/r-sossego.pdf
 
-# Test Cases for the 3rd Transducer
+#Test Cases for the 3rd Transducer
 #-------------------------------------------------------------------------------
+echo 'starting testing for 3rd transducer tests'
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/calar.txt | fstarcsort > output/3rd/calar.fst
 fstcompose output/3rd/calar.fst output/final/final.fst > output/3rd/r-calar.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-calar.fst | dot -Tpdf > output/3rd/r-calar.pdf
@@ -223,8 +238,9 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/3rd/xerox.txt | fstarc
 fstcompose output/3rd/xerox.fst output/final/final.fst > output/3rd/r-xerox.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/r-xerox.fst | dot -Tpdf > output/3rd/r-xerox.pdf
 
-# Test Cases for the 4th Transducer
+#Test Cases for the 4th Transducer
 #-------------------------------------------------------------------------------
+echo 'starting testing for 4th transducer tests'
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/4th/aleluia.txt | fstarcsort > output/4th/aleluia.fst
 fstcompose output/4th/aleluia.fst output/final/final.fst > output/4th/r-aleluia.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/4th/r-aleluia.fst | dot -Tpdf > output/4th/r-aleluia.pdf
