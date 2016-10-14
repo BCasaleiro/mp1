@@ -47,7 +47,7 @@ fstrmepsilon output/4th/t-4th.fst | fstarcsort > output/4th/4th.fst
 # #-------------------------------------------------------------------------------
 # # 1st with 2nd -> t-1
 # #-------------------------------------------------------------------------------
-fstcompose output/2nd/2nd.fst output/1st/1st.fst > output/final/t-1.fst
+fstcompose output/1st/1st.fst output/2nd/2nd.fst > output/final/t-1.fst
 # fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-1.fst | dot -Tpdf > output/final/t-1.pdf
 # # t-1 with 3rd -> t-2
 # #-------------------------------------------------------------------------------
