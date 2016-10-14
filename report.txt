@@ -1,0 +1,14 @@
+Group Number: 20
+Bernardo Afonso Francisco Casaleiro nº87827		
+João Daniel Fernandes Godinho 		nº87830
+
+
+Os casos de teste que foram usados, foram primariamente testados individualmente para cada passo e posteriormente movidos apenas para teste do transdutor final.
+
+Foram desenvolvidos quatro transdutores presentes na pasta src/, um por cada passo, sendo no fim combinados usando o fstcombine. Por uma questão de limpeza retirámos os epsilons dos transdutores em cada passo, utilizando a função fstrmepsilon.
+
+Existem 6 pastas de testes (input/), as quatro iniciais para cada passo testando as várias alineas de cada um, uma pasta final que contém os testes relativos aos nossos nomes e por último o caso de teste presente no enunciado (lusiadas).
+
+Os outputs estão também divididos por passos na pasta output/, sendo removidos os .fst no final da execução do script, para os visualizar apenas remover as últimas 6 linhas do script run.sh.
+
+O transdutor final passou todos os testes presentes no enunciado e mais alguns manualmente criados pelo grupo.
