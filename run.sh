@@ -80,6 +80,18 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/extra.txt | fstarc
 fstcompose output/1st/extra.fst output/1st/1st.fst > output/1st/r-extra.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-extra.fst | dot -Tpdf > output/1st/r-extra.pdf
 
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/exasa.txt | fstarcsort > output/1st/exasa.fst
+fstcompose output/1st/exasa.fst output/1st/1st.fst > output/1st/r-exasa.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-exasa.fst | dot -Tpdf > output/1st/r-exasa.pdf
+
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/estra.txt | fstarcsort > output/1st/estra.fst
+fstcompose output/1st/estra.fst output/1st/1st.fst > output/1st/r-estra.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-estra.fst | dot -Tpdf > output/1st/r-estra.pdf
+
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/1st/esa.txt | fstarcsort > output/1st/esa.fst
+fstcompose output/1st/esa.fst output/1st/1st.fst > output/1st/r-esa.fst
+fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/1st/r-esa.fst | dot -Tpdf > output/1st/r-esa.pdf
+
 # Test Cases for the 2nd Transducer
 #-------------------------------------------------------------------------------
 echo 'starting testing for 2nd transducer tests'
