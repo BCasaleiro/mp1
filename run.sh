@@ -47,15 +47,15 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/4th/4th.fst | dot -Tp
 #-------------------------------------------------------------------------------
 # 1st with 2nd -> t-1
 #-------------------------------------------------------------------------------
-fstcompose output/1st/1st.fst output/2nd/2nd.fst | fstarcsort > output/final/t-1.fst
+fstcompose output/1st/1st.fst output/2nd/2nd.fst > output/final/t-1.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-1.fst | dot -Tpdf > output/final/t-1.pdf
 # t-1 with 3rd -> t-2
 #-------------------------------------------------------------------------------
-fstcompose output/final/t-1.fst output/3rd/3rd.fst | fstarcsort > output/final/t-2.fst
+fstcompose output/final/t-1.fst output/3rd/3rd.fst > output/final/t-2.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-2.fst | dot -Tpdf > output/final/t-2.pdf
 # t-2 with 4th -> final
 #-------------------------------------------------------------------------------
-fstcompose output/final/t-2.fst output/4th/4th.fst | fstarcsort > output/final/final.fst
+fstcompose output/final/t-2.fst output/4th/4th.fst > output/final/final.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/final.fst | dot -Tpdf > output/final/final.pdf
 
 #-------------------------------------------------------------------------------
