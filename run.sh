@@ -12,35 +12,35 @@ rm -f output/1st/*.pdf
 rm -f output/2nd/*.pdf
 rm -f output/3rd/*.pdf
 rm -f output/4th/*.pdf
-rm -f output/final/*.fst
+rm -f output/final/*.pdf
 
 #-------------------------------------------------------------------------------
 # 1st Step
 #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/1st.txt | fstarcsort > output/1st/t-1st.fst
 fstrmepsilon output/1st/t-1st.fst | fstarcsort > output/1st/1st.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/1st/1st.fst | dot -Tpdf  > output/1st/1st.pdf
+# fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/1st/1st.fst | dot -Tpdf  > output/1st/1st.pdf
 
 # #-------------------------------------------------------------------------------
 # # 2nd Step
 # #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/2nd.txt | fstarcsort > output/2nd/t-2nd.fst
 fstrmepsilon output/2nd/t-2nd.fst | fstarcsort > output/2nd/2nd.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/2nd.fst | dot -Tpdf  > output/2nd/2nd.pdf
+# fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/2nd/2nd.fst | dot -Tpdf  > output/2nd/2nd.pdf
 
 # #-------------------------------------------------------------------------------
 # # 3rd Step
 # #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/3rd.txt | fstarcsort > output/3rd/t-3rd.fst
 fstrmepsilon output/3rd/t-3rd.fst | fstarcsort > output/3rd/3rd.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/3rd.fst | dot -Tpdf  > output/3rd/3rd.pdf
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/3rd/3rd.fst | dot -Tpdf  > output/3rd/3rd.pdf
 
 # #-------------------------------------------------------------------------------
 # # 4th Step
 # #-------------------------------------------------------------------------------
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  src/4th.txt | fstarcsort > output/4th/t-4th.fst
 fstrmepsilon output/4th/t-4th.fst | fstarcsort > output/4th/4th.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/4th/4th.fst | dot -Tpdf  > output/4th/4th.pdf
+# fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/4th/4th.fst | dot -Tpdf  > output/4th/4th.pdf
 
 # #-------------------------------------------------------------------------------
 # # Composing Final Transducer
@@ -48,15 +48,15 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt  output/4th/4th.fst | dot -Tp
 # # 1st with 2nd -> t-1
 # #-------------------------------------------------------------------------------
 fstcompose output/1st/1st.fst output/2nd/2nd.fst > output/final/t-1.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-1.fst | dot -Tpdf > output/final/t-1.pdf
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-1.fst | dot -Tpdf > output/final/t-1.pdf
 # # t-1 with 3rd -> t-2
 # #-------------------------------------------------------------------------------
-fstcompose output/final/t-1.fst output/3rd/3rd.fst > output/final/t-2.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-2.fst | dot -Tpdf > output/final/t-2.pdf
+fstcompose output/final/t-1.fst output/4th/4th.fst > output/final/t-2.fst
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/t-2.fst | dot -Tpdf > output/final/t-2.pdf
 # # t-2 with 4th -> final
 # #-------------------------------------------------------------------------------
 fstcompose output/final/t-2.fst output/4th/4th.fst > output/final/final.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/final.fst | dot -Tpdf > output/final/final.pdf
+# fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/final.fst | dot -Tpdf > output/final/final.pdf
 
 #-------------------------------------------------------------------------------
 # Test Cases
