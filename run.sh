@@ -7,14 +7,12 @@ mkdir -p output/2nd
 mkdir -p output/3rd
 mkdir -p output/4th
 mkdir -p output/final
-mkdir -p output/lusiadas
 
 rm -f output/1st/*.pdf
 rm -f output/2nd/*.pdf
 rm -f output/3rd/*.pdf
 rm -f output/4th/*.pdf
 rm -f output/final/*.pdf
-rm -f output/lusiadas/*.pdf
 
 #-------------------------------------------------------------------------------
 # 1st Step
@@ -273,12 +271,6 @@ fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/godinho.txt | fs
 fstcompose output/final/godinho.fst output/final/transdutorFinal.fst > output/final/r-godinho.fst
 fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-godinho.fst | dot -Tpdf > output/final/r-godinho.pdf
 
-# Lusiadas Test Cases
-#-------------------------------------------------------------------------------
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  input/final/bernardo.txt | fstarcsort > output/final/bernardo.fst
-fstcompose output/final/bernardo.fst output/final/transdutorFinal.fst > output/final/r-bernardo.fst
-fstdraw --isymbols=syms.txt --osymbols=syms.txt  output/final/r-bernardo.fst | dot -Tpdf > output/final/r-bernardo.pdf
-
 #-------------------------------------------------------------------------------
 # Cleaning up the house
 #-------------------------------------------------------------------------------
@@ -287,4 +279,3 @@ rm -f output/2nd/*.fst
 rm -f output/3rd/*.fst
 rm -f output/4th/*.fst
 rm -f output/final/*.fst
-rm -f output/lusiadas/*.fst
