@@ -21,5 +21,7 @@ Na pasta do projecto encontra-se o script run.sh com todos os comandos necessár
   -'input/final/' com todos os testes referentes ao transdutor final,
   -'input/lusiadas/' com todos os testes presentes no enunciado,
 - 'output/' onde se encontram todos os resultados dos testes, também divididos de forma semelhante à pasta input.
+  No script 'run.sh' os ficheiros '*.fst' estão a ser removidos no final deste.
+  Caso deseje visualizar os mesmos basta comentar as ultimas linhas do script.
 
 O transdutor final passou todos os testes presentes no enunciado e mais alguns manualmente criados pelo grupo.
