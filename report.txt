@@ -1,14 +1,25 @@
 Group Number: 20
-Bernardo Afonso Francisco Casaleiro nº87827		
+Bernardo Afonso Francisco Casaleiro nº87827
 João Daniel Fernandes Godinho 		nº87830
 
+Transdutores:
+Foram desenvolvidos quatro transdutores presentes na pasta 'src/'', um por cada passo, sendo depois combinados pelo script, usando o fstcombine.
+Por uma questão de limpeza retirámos os epsilons dos transdutores em cada passo, utilizando a função fstrmepsilon.
 
+Casos de teste:
 Os casos de teste que foram usados, foram primariamente testados individualmente para cada passo e posteriormente movidos apenas para teste do transdutor final.
 
-Foram desenvolvidos quatro transdutores presentes na pasta src/, um por cada passo, sendo no fim combinados usando o fstcombine. Por uma questão de limpeza retirámos os epsilons dos transdutores em cada passo, utilizando a função fstrmepsilon.
-
-Existem 6 pastas de testes (input/), as quatro iniciais para cada passo testando as várias alineas de cada um, uma pasta final que contém os testes relativos aos nossos nomes e por último o caso de teste presente no enunciado (lusiadas).
-
-Os outputs estão também divididos por passos na pasta output/, sendo removidos os .fst no final da execução do script, para os visualizar apenas remover as últimas 6 linhas do script run.sh.
+Estrutura:
+Na pasta do projecto encontra-se o script run.sh com todos os comandos necessários para correr o projecto, o presente relatório, o ficheiro de simbolos utilizados na criação dos transdutores e as 4 pastas principais:
+- 'src/', onde se encontram todos os transdutores,
+- 'scripts/' onde se encontram os scripts fornecidos pelo professor e utilizados na criação de testes,
+- 'input/' onde se encontram todos os testes,
+  -'input/1st/' com todos os testes referentes ao primeiro passo,
+  -'input/2nd/' com todos os testes referentes ao segundo passo,
+  -'input/3rd/' com todos os testes referentes ao terceiro passo,
+  -'input/4th/' com todos os testes referentes ao quarto passo,
+  -'input/final/' com todos os testes referentes ao transdutor final,
+  -'input/lusiadas/' com todos os testes presentes no enunciado,
+- 'output/' onde se encontram todos os resultados dos testes, também divididos de forma semelhante à pasta input.
 
 O transdutor final passou todos os testes presentes no enunciado e mais alguns manualmente criados pelo grupo.
